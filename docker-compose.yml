@@ -5,7 +5,7 @@ services:
     build: website/config
     container_name: php-website
     volumes: 
-      - ./website/src:/var/www/html
+      - ./website:/var/www/html
       - /var/log/apache2/app:/var/log/apache2/
     env_file: .env
     ports:
