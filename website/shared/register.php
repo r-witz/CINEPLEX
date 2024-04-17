@@ -7,7 +7,7 @@
             <img src="../img/icons/cross.webp" alt="">
         </div>
         <h2>TO CINEPLEX</h2>
-        <form action="/submit_registration" method="post">
+        <form action="../actions/registering.php" method="post">
             <label for="pseudo">Pseudo :</label>
             <input type="text" id="pseudo" name="pseudo" required>
 
