@@ -25,4 +25,20 @@ class User {
             die("Error creating a user :" . $e->getMessage());
         }
     }
+
+
+    public function getUserByPseudo($pseudo) {
+        $query = "SELECT * FROM Users WHERE pseudo = :pseudo LIMIT 1";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':pseudo', $pseudo);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return false;
+    }
+
 }
