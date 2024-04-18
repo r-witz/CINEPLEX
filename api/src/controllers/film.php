@@ -3,7 +3,7 @@
 header('Content-Type: application/json');
 require_once 'database/database.php';
 
-class Film {
+class FilmController {
     private $conn;
 
     public function __construct() {
