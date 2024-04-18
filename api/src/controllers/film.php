@@ -18,6 +18,7 @@ class Film {
             $search = preg_replace('/[^a-zA-Z0-9: \']/i', '', $search);
             $search = trim($search);
             $search = preg_replace('/\s+/', ' ', $search);
+            $search = '%' . $search . '%';
             
             $query = "SELECT
                             f.title,
@@ -30,16 +31,16 @@ class Film {
                         FROM
                             (SELECT * FROM Films WHERE id IN (
                             SELECT id FROM Films
-                            WHERE title LIKE CONCAT('%', :search ,'%')
+                            WHERE title LIKE :search
                             UNION
                             SELECT film_id FROM Films_Categories
-                            WHERE category_id IN (SELECT id FROM Categories WHERE name LIKE CONCAT('%', :search ,'%'))
+                            WHERE category_id IN (SELECT id FROM Categories WHERE name LIKE :search)
                             UNION
                             SELECT film_id FROM Films_Actors
-                            WHERE actor_id IN (SELECT id FROM Actors WHERE name LIKE CONCAT('%', :search ,'%'))
+                            WHERE actor_id IN (SELECT id FROM Actors WHERE name LIKE :search)
                             UNION
                             SELECT id FROM Films
-                            WHERE director_id IN (SELECT id FROM Directors WHERE name LIKE CONCAT('%', :search ,'%'))
+                            WHERE director_id IN (SELECT id FROM Directors WHERE name LIKE :search)
                             )) f
                         JOIN Directors d ON f.director_id = d.id
                         JOIN Films_Actors fa ON f.id = fa.film_id
