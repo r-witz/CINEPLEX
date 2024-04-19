@@ -2,6 +2,7 @@
 
 require_once 'controllers/login.php';
 require_once 'controllers/register.php';
+require_once 'controllers/cart.php';
 require_once 'controllers/film.php';
 require_once 'controllers/people.php';
 
@@ -50,6 +51,20 @@ class ApiRouter {
             case 'library':
                 break;
             case 'cart':
+                switch ($requestMethod) {
+                    case 'POST':
+                        $cart = new CartController();
+                        $cart->addToCart();
+                        break;
+                    case 'DELETE':
+                        $cart = new CartController();
+                        $cart->removeFromCart();
+                        break;
+                    default:
+                        http_response_code(405);
+                        echo json_encode(["message" => "Method not allowed"]);
+                        break;
+                }
                 break;
             case 'film':
                 switch ($requestMethod) {

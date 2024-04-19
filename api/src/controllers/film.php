@@ -21,6 +21,7 @@ class FilmController {
             $search = '%' . $search . '%';
             
             $query = "SELECT
+                            f.id,
                             f.title,
                             f.plot,
                             f.image_name,
