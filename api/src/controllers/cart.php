@@ -20,11 +20,25 @@ class CartController {
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':email', $userEmail);
             $stmt->execute();
-            $userId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+            $userId = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if (!$userId) {
                 http_response_code(404);
                 echo json_encode(["message" => "User not found"]);
+                return;
+            }
+
+            $userId = $userId['id'];
+
+            $query = "SELECT id FROM Films WHERE id = :film_id LIMIT 1";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':film_id', $filmId);
+            $stmt->execute();
+            $film = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!$film) {
+                http_response_code(404);
+                echo json_encode(["message" => "Film do not exist in the database"]);
                 return;
             }
 
@@ -66,11 +80,25 @@ class CartController {
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':email', $userEmail);
             $stmt->execute();
-            $userId = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+            $userId = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if (!$userId) {
                 http_response_code(404);
                 echo json_encode(["message" => "User not found"]);
+                return;
+            }
+
+            $userId = $userId['id'];
+
+            $query = "SELECT id FROM Films WHERE id = :film_id LIMIT 1";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':film_id', $filmId);
+            $stmt->execute();
+            $film = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!$film) {
+                http_response_code(404);
+                echo json_encode(["message" => "Film do not exist in the database"]);
                 return;
             }
 
