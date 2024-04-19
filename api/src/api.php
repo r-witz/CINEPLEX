@@ -2,6 +2,7 @@
 
 require_once 'controllers/login.php';
 require_once 'controllers/register.php';
+require_once 'controllers/library.php';
 require_once 'controllers/cart.php';
 require_once 'controllers/film.php';
 require_once 'controllers/people.php';
@@ -49,6 +50,20 @@ class ApiRouter {
                 }
                 break;
             case 'library':
+                switch ($requestMethod) {
+                    case 'GET':
+                        $library = new LibraryController();
+                        $library->getFilmsOfUser();
+                        break;
+                    case 'POST':
+                        $library = new LibraryController();
+                        $library->addCartToLibrary();
+                        break;
+                    default:
+                        http_response_code(405);
+                        echo json_encode(["message" => "Method not allowed"]);
+                        break;
+                }
                 break;
             case 'cart':
                 switch ($requestMethod) {
