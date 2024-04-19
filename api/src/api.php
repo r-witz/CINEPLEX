@@ -1,7 +1,10 @@
 <?php
 
+require_once 'controllers/login.php';
+require_once 'controllers/register.php';
 require_once 'controllers/film.php';
 require_once 'controllers/people.php';
+
 class ApiRouter {
     public function processRequest() {
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -21,8 +24,28 @@ class ApiRouter {
                 }
                 break;
             case 'login':
+                switch ($requestMethod) {
+                    case 'POST':
+                        $login = new LoginController();
+                        $login->loginUser();
+                        break;
+                    default:
+                        http_response_code(405);
+                        echo json_encode(["message" => "Method not allowed"]);
+                        break;
+                }
                 break;
             case 'register':
+                switch ($requestMethod) {
+                    case 'POST':
+                        $register = new RegisterController();
+                        $register->registerUser();
+                        break;
+                    default:
+                        http_response_code(405);
+                        echo json_encode(["message" => "Method not allowed"]);
+                        break;
+                }
                 break;
             case 'library':
                 break;
