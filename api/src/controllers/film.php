@@ -48,7 +48,7 @@ class FilmController {
                         JOIN Actors a ON fa.actor_id = a.id
                         JOIN Films_Categories fc ON f.id = fc.film_id
                         JOIN Categories c ON fc.category_id = c.id
-                        GROUP BY f.id, d.name;";
+                        GROUP BY f.id;";
             
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':search', $search);
