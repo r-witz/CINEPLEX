@@ -18,7 +18,7 @@
         <img src="img/3d/popcorn.webp" alt="Popcorn" class="pop_2">
         <img src="img/3d/popcorn.webp" alt="Popcorn" class="pop_3">
         <img src="img/3d/popcorn.webp" alt="Popcorn" class="pop_4">
-        <img src="img/icons/arrow.webp" alt="Arrow" class="down_arrow">
+        <img src="img/icons/arrow.webp" alt="Arrow" class="down_arrow" id="scroll-down-arrow1">
     </div>
     <div id="presentation">
         <h2>Welcome to cineplex</h2>
@@ -38,7 +38,7 @@
         <img src="img/3d/popcorn.webp" alt="Popcorn" class="pop_6">
         <img src="img/3d/popcorn.webp" alt="Popcorn" class="pop_7">
         <img src="img/3d/popcorn.webp" alt="Popcorn" class="pop_8">
-        <img src="img/icons/arrow.webp" alt="Arrow" class="down_arrow">
+        <img src="img/icons/arrow.webp" alt="Arrow" class="down_arrow" id="scroll-down-arrow2">
     </div>
     <div id="fade"></div>
     <div id="cinema_room">
@@ -51,13 +51,17 @@
                 <img src="img/films/homepage_image/inception.webp" alt="Inception" class="carousel-item">
             </div>
             <div class="selection-container">
-                    <div class="selection-circle"></div>
+                    <div class="selection-circle selected"></div>
                     <div class="selection-circle"></div>
                     <div class="selection-circle"></div>
                     <div class="selection-circle"></div>
             </div>
+            <div class="buy-button-container">
+                <button class="buy-button">Buy Now</button>
+            </div>
         </div>
         <img src="img/3d/cinema-seats.webp" alt="Cinema Seats Rows" id=seat-rows>
     </div>
+    <script src="script/homepage.js"></script>
 </body>
 </html>
