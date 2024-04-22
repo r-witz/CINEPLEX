@@ -7,6 +7,9 @@
 }
 
 body {
+    position: relative;
+    z-index: -99999999;
+    width: 100vw;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -23,9 +26,21 @@ img {
     -ms-user-select: none;
 }
 
+.down_arrow {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50vw;
+    top: 95vh;
+    width: 2vw;
+    rotate: 90deg;
+}
+
+/* Main View */
+
 #mainview {
+    position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 125vh;
 }
 
 #mainview h1 {
@@ -39,9 +54,9 @@ img {
     top: 48vh;
 }
 
-/* 3D Images Placement */
+/* 3D Images Placement Main View */
 
-#mainview #camera {
+#mainview .camera {
     transform: translate(-50%, -50%) rotate(21.05deg);
     width: 38rem;
     position: absolute;
@@ -50,7 +65,7 @@ img {
     filter: blur(1px);
 }
 
-#mainview #glasses {
+#mainview .glasses {
     transform: translate(50%, -50%) rotate(-14.428deg);
     ;
     width: 32rem;
@@ -59,35 +74,36 @@ img {
     top: 58vh;
 }
 
-#mainview #chair {
-    transform: translate(50%, 50%) rotate(18deg) scaleX(-1);
+#mainview .chair {
+    transform: translate(50%, -50%) rotate(18deg) scaleX(-1);
     width: 28rem;
     position: absolute;
     right: 7vw;
-    bottom: 11vh;
+    top: 90vh;
+
     filter: blur(4.5px);
 }
 
-#mainview #clap {
+#mainview .clap {
     z-index: -1;
-    transform: translate(-50%, 50%) rotate(-5.391deg);
+    transform: translate(-50%, -50%) rotate(-5.391deg);
     width: 24rem;
     position: absolute;
     left: 52vw;
-    bottom: 27vh;
+    top: 73vh;
     filter: blur(3px);
 }
 
-#mainview #popcorn_cup {
-    transform: translate(-50%, 50%) rotate(11.87deg);
+#mainview .popcorn_cup {
+    transform: translate(-50%, -50%) rotate(11.87deg);
     width: 40rem;
     position: absolute;
     left: 17vw;
-    bottom: 10vh;
+    top: 94vh;
     filter: blur(5px);
 }
 
-#mainview #pop_1 {
+#mainview .pop_1 {
     transform: translate(50%, -50%) rotate(-106.395deg);
     width: 60rem;
     position: absolute;
@@ -96,7 +112,7 @@ img {
     filter: blur(1.5px);
 }
 
-#mainview #pop_2 {
+#mainview .pop_2 {
     transform: translate(50%, -50%) rotate(-47.228deg);
     width: 50rem;
     position: absolute;
@@ -105,7 +121,7 @@ img {
     filter: blur(3px);
 }
 
-#mainview #pop_3 {
+#mainview .pop_3 {
     z-index: -1;
     transform: translate(50%, -50%);
     width: 65rem;
@@ -115,20 +131,319 @@ img {
     filter: blur(2.5px);
 }
 
-#mainview #pop_4 {
-    transform: translate(50%, 50%) rotate(-62.124deg);
+#mainview .pop_4 {
+    transform: translate(50%, -50%) rotate(-62.124deg);
     width: 40rem;
     position: absolute;
     right: 25vw;
-    bottom: 13vh;
+    top: 87vh;
     filter: blur(4.5px);
 }
 
-#mainview #down_arrow {
-    transform: translate(-50%, -50%);
+/* Presentation View*/
+
+#presentation {
+    z-index: -3;
+    position: relative;
+    width: 100vw;
+    height: 111vh;
+    background: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(169, 169, 169, 1) 100%);
+}
+
+#presentation h2 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #000;
+    transform: translate(50%, -50%);
     position: absolute;
+    right: 39vw;
+    top: 45vh;
+    width: 32rem;
+    text-transform: uppercase;
+    line-height: 4.5rem;
+
+}
+
+#presentation p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000;
+    transform: translate(50%, -50%);
+    position: absolute;
+    right: 31vw;
+    top: 67vh;
+    width: 50rem;
+    line-height: 1.9rem;
+}
+
+#presentation strong {
+    font-weight: 600;
+}
+
+#presentation strong:last-of-type {
+    font-weight: 700;
+}
+
+/* 3D Images Placement Presentation View*/
+
+#presentation .ticket {
+    transform: translate(-50%, -50%);
+    width: 17rem;
+    position: absolute;
+    left: 4.5vw;
+    top: 19vh;
+    filter: blur(3.5px);
+}
+
+#presentation .camera {
+    transform: translate(-50%, -50%) rotate(21.05deg);
+    width: 35rem;
+    position: absolute;
+    left: 30vw;
+    top: 28vh;
+    filter: blur(2px);
+}
+
+#presentation .glasses {
+    transform: translate(50%, -50%) rotate(-14.428deg);
+    width: 25rem;
+    position: absolute;
+    right: 35vw;
+    top: 20vh;
+}
+
+#presentation .clap {
+    transform: translate(50%, -50%) rotate(-23.909deg);
+    width: 20rem;
+    position: absolute;
+    right: 2.5vw;
+    top: 27vh;
+    filter: blur(3px);
+}
+
+#presentation .chair {
+    transform: translate(-50%, -50%) rotate(-6.896deg);
+    width: 40rem;
+    position: absolute;
+    left: 6vw;
+    top: 78vh;
+    filter: blur(1px);
+}
+
+#presentation .launch {
+    transform: translate(-50%, -50%) rotate(65.416deg);
+    width: 14rem;
+    position: absolute;
+    left: 37vw;
+    top: 73vh;
+    filter: blur(4px);
+}
+
+#presentation .popcorn_cup {
+    z-index: -2;
+    transform: translate(50%, -50%) rotate(-16.752deg);
+    width: 25rem;
+    position: absolute;
+    right: 3vw;
+    top: 85vh;
+    filter: blur(5px);
+}
+
+#presentation .pop_1 {
+    transform: translate(50%, -50%) rotate(135.853deg);
+    width: 25rem;
+    position: absolute;
+    right: 17vw;
+    top: 90vh;
+    filter: blur(2.5px);
+}
+
+#presentation .pop_2 {
+    z-index: -1;
+    transform: translate(50%, -50%) rotate(-62.124deg);
+    width: 40rem;
+    position: absolute;
+    right: 23vw;
+    top: 74vh;
+    filter: blur(4px);
+}
+
+#presentation .pop_3 {
+    z-index: -1;
+    transform: translate(50%, -50%) rotate(135.853deg);
+    width: 30rem;
+    position: absolute;
+    right: 17vw;
+    top: 56vh;
+    filter: blur(2.5px);
+}
+
+#presentation .pop_4 {
+    z-index: -1;
+    transform: translate(50%, -50%) rotate(135.853deg);
+    width: 25rem;
+    position: absolute;
+    right: 27vw;
+    top: 48vh;
+    filter: blur(2.5px);
+}
+
+#presentation .pop_5 {
+    transform: translate(50%, -50%) rotate(135.853deg);
+    width: 25rem;
+    position: absolute;
+    right: 21vw;
+    top: 46.5vh;
+    filter: blur(2px);
+}
+
+#presentation .pop_6 {
+    transform: translate(50%, -50%) rotate(135.853deg);
+    width: 40rem;
+    position: absolute;
+    right: 24vw;
+    top: 37vh;
+    filter: blur(1.5px);
+}
+
+#presentation .pop_7 {
+    transform: translate(50%, -50%) rotate(135.853deg);
+    width: 25rem;
+    position: absolute;
+    right: 14vw;
+    top: 37vh;
+    filter: blur(2.5px);
+}
+
+#presentation .pop_8 {
+    z-index: -1;
+    transform: translate(50%, -50%) rotate(46.847deg);
+    width: 40rem;
+    position: absolute;
+    right: 4vw;
+    top: 51.5vh;
+    filter: blur(2.5px);
+}
+
+/* Fade View */
+
+#fade {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(169, 169, 169, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* Cinema Room */
+
+#cinema_room {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: -2;
+}
+
+#cinema_room #seat-rows {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100vw;
     left: 50vw;
     bottom: 0;
-    width: 2vw;
-    rotate: 90deg;
+}
+
+/* Carousel */
+
+#cinema_room #screen {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    left: 50vw;
+    top: 62vh;
+    width: 48vw;
+    height: 27vw;
+    overflow: hidden;
+}
+
+#layer-effect {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 1;
+    mix-blend-mode: multiply;
+    height: 100%;
+    width: 125%;
+    object-fit: cover;
+}
+
+.carousel-content {
+    width: 400%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: transform .5s ease;
+}
+
+.carousel-item {
+    width: 25%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.selection-circle {
+    z-index: 10;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #696969;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.selected {
+    background-color: white;
+}
+
+.selection-container {
+    z-index: 10;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+/* Buy Now Button */
+
+.buy-button-container {
+    position: absolute;
+    width: 100vw;
+    bottom: 15px;
+    left: 90%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+
+.buy-button {
+    display: flex;
+    padding: 12px 30px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.buy-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.5s;
 }
