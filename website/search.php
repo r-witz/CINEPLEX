@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/search.css">
 </head>
 
+<?php include_once 'shared/header.php'; ?>
+
 <body>
     <div id="container">
 
@@ -58,4 +60,7 @@
 
     <script src="script/search.js"></script>
 </body>
+
+<?php include_once 'shared/footer.php'; ?>
+
 </html>

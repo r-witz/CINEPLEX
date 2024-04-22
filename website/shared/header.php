@@ -3,10 +3,10 @@
 <header>
     <div class="navbar">
         <div class="left">        
-            <a href="index.html"><img src="../img/icons/accueil.webp" alt=""></a>
+            <a href="index.php"><img src="../img/icons/accueil.webp" class="imgheader" alt=""></a>
             <div class="dropdown-container">
-                <p>CATEGORIES</p>
-                <img src="../img/icons/plain_arrow.webp" id="plainarrow" alt="">
+                <p class="headerp">CATEGORIES</p>
+                <img src="../img/icons/plain_arrow.webp" id="plainarrow" class="imgheader" alt="">
                 <div class="dropdown-menu grid">
                 <a href="#"><span>Drama</span></a>
                 <a href="#"><span>Action</span></a>
@@ -22,11 +22,11 @@
             <input class="checkbox" type="checkbox">
             <div class="search">
                 <input class="search_input" type="text">
-                <img id="searchIcon" src="../img/icons/loupe.webp" alt="">
+                <img id="searchIcon" src="../img/icons/loupe.webp" class="imgheader" alt="">
             </div>
-            <a href="#"><img src="../img/icons/library.webp" alt=""></a>
-            <a href="#"><img src="../img/icons/utilisateur.webp" alt=""></a>
-            <a href="#"><img src="../img/icons/chariot-intelligent.webp" alt=""></a>
+            <a href="#"><img src="../img/icons/library.webp" class="imgheader" alt=""></a>
+            <a href="shared/register.php"><img src="../img/icons/utilisateur.webp" class="imgheader" alt=""></a>
+            <a href="#"><img src="../img/icons/chariot-intelligent.webp" class="imgheader" alt=""></a>
         </div>
     </div>
     <script src="../script/header.js"></script>

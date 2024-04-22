@@ -4,7 +4,7 @@
     <div class="container">
         <div class="header">
             <h1>Login</h1>
-            <img src="../img/icons/cross.webp" alt="">
+            <a href="../"><img src="../img/icons/cross.webp"></a>
         </div>
         <h2>TO CINEPLEX</h2>
         <form action="../actions/logging.php" method="post">

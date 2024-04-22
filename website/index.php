@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/homepage.css">
 </head>
 <body>
+    <?php include_once 'shared/header.php' ?>
     <div id="mainview">
         <h1>CINEPLEX</h1>
         <img src="img/3d/camera.webp" alt="Camera" class="camera">
@@ -62,6 +63,11 @@
         </div>
         <img src="img/3d/cinema-seats.webp" alt="Cinema Seats Rows" id=seat-rows>
     </div>
+
     <script src="script/homepage.js"></script>
 </body>
+
+<?php include_once 'shared/footer.php'; ?>
+
+
 </html>
