@@ -386,7 +386,7 @@ img {
 .carousel-item {
     width: 25%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
 }
 
 .selection-circle {

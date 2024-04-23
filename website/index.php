@@ -64,6 +64,7 @@
         <img src="img/3d/cinema-seats.webp" alt="Cinema Seats Rows" id=seat-rows>
     </div>
 
+    <script src="script/carousel.js"></script>
     <script src="script/homepage.js"></script>
 </body>
 
