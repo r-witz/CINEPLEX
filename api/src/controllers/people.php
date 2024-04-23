@@ -15,7 +15,7 @@ class PeopleController {
             $search = isset($query_params['search']) ? $query_params['search'] : '';
 
             $search = str_replace('+', ' ', $search);
-            $search = preg_replace('/[^a-zA-Z0-9: \']/i', '', $search);
+            $search = preg_replace('/[^a-zA-Z0-9-.: \']/i', '', $search);
             $search = trim($search);
             $search = preg_replace('/\s+/', ' ', $search);
             $search = '%' . $search . '%';
