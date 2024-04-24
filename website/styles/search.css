@@ -270,17 +270,18 @@ body {
 #film-carousel {
     position: absolute;
     left: 0;
-    padding-left: 10vw;
     bottom: 3vh;
     height: 29vh;
-    width: 2000vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: end;
     justify-content: flex-start;
     gap: 3rem;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 #film-carousel img {
@@ -291,6 +292,14 @@ body {
     border-radius: 1.6rem;
     border: solid 3px #000;
     transition: 0.5s;
+}
+
+#film-carousel img:first-of-type {
+    margin-left: 10vw;
+}
+
+#film-carousel img:last-of-type {
+    margin-right: 10vw;
 }
 
 #film-carousel #selected {
