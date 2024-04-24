@@ -13,18 +13,13 @@ header {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #000000;
     color: #fff;
     width: 80%;
     height: 50px;
     border-radius: 50px;
     box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.50);
-}
-
-.left {
-    display: flex;
-    align-items: center;
 }
 
 #plainarrow {
@@ -41,18 +36,26 @@ header {
     cursor: pointer;
 }
 
+.left,
 .right {
+    position: relative;
     display: flex;
     align-items: center;
-    margin-left: auto;
-    margin-right: 15px;
+    margin: 0 20px;
+}
+
+.right {
+    gap: 15px;
+}
+
+.left > a,
+.right > a {
+    display: grid;
+    place-items: center;
 }
 
 .imgheader {
-    width: 20px;
-    height: 20px;
-    margin-top: 5px;
-    margin-left: 20px;
+    height: 1.5rem;
     transition: 0.3s;
 }
 

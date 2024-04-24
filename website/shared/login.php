@@ -1,21 +1,25 @@
-<link rel="stylesheet" href="../styles/log_reg.css">
-
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Login</h1>
-            <a href="../"><img src="../img/icons/cross.webp"></a>
-        </div>
-        <h2>TO CINEPLEX</h2>
-        <form action="../actions/logging.php" method="post">
-            <label for="pseudo">Pseudo :</label>
-            <input type="text" id="pseudo" name="pseudo" required placeholder="Enter your pseudo">
-
-            <label for="password">Password :</label>
-            <input type="password" id="password" name="password" required placeholder="Enter your password">
-
-            <input type="submit" value="Login">
-            <p>Want to&nbsp;<a href="register.php" id="register_text">register ? </a></p>
-        </form>
+<div class="login-container" id="login">
+    <img src="/img/icons/cross.webp" class="cross">
+    <div class="header">
+        <h1>Login</h1>
+        <h2>To CINEPLEX</h2>
     </div>
-</body>
+    <p class="error"></p>
+    <form action="/actions/logging.php" method="post">
+        <label for="email">Email :</label>
+        <input type="email" class="email" name="email" required placeholder="Enter your email...">
+
+        <label for="password">Password :</label>
+        <input type="password" class="password" name="password" required placeholder="Enter your password...">
+
+        <input type="submit" value="Login">
+    </form>
+    <p>Want to&nbsp;<strong id="register_text">register</strong>&nbsp;?</p>
+    <?php
+        if (isset($_SESSION['error_login'])) {
+            echo "<script>document.getElementById('login').style.display = 'flex';</script>";
+            echo "<script>document.querySelector('#login .error').textContent = '{$_SESSION['error_login']}';</script>";
+            unset($_SESSION['error_login']);
+        }
+    ?>
+</div>

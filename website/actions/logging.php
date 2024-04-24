@@ -1,40 +1,21 @@
 <?php
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-require_once '../database/user.php';
-require_once 'bcrypt.php';
+$ch = curl_init('http://php-api/login');
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(["email" => $email, "password" => $password]));
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
 
-$userClass = new User();
-$bcrypt = new Bcrypt();
+$response = json_decode($response, true);
 
-if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
-    $pseudo = filter_var($_POST['pseudo']);
-    $password = $_POST['password'];
-
-    if (!$pseudo) {
-        $_SESSION['error'] = 'Invalid username.';
-        header('Location: ../pages/login.php');
-        exit;
-    }
-
-    $user = $userClass->getUserByPseudo($pseudo);
-    if ($user) {
-        // Vérifier le mot de passe haché
-        if ($bcrypt->verify($password, $user['password'])) {
-            $_SESSION['account'] = $pseudo;
-            header('Location: ../index.php');
-            exit;
-        } else {
-            $_SESSION['error'] = 'Incorrect password.';
-            header('Location: ../pages/login.php');
-            exit;
-        }
-    } else {
-        $_SESSION['error'] = 'User not found.';
-        header('Location: ../pages/login.php');
-        exit;
-    }
+if ($response['message'] === 'User logged in successfully') {
+    $_SESSION['account'] = $email;
 } else {
-    $_SESSION['error'] = 'Missing field';
-    header('Location: ../pages/login.php');
-    exit;
+    $_SESSION['error_login'] = $response['message'];
 }
+
+header('Location: ' . $_SERVER['HTTP_REFERER']);
