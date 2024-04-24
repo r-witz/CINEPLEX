@@ -4,7 +4,7 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 35px; /* Pour le maintenir en haut de la page */
+    top: 5vh; /* Pour le maintenir en haut de la page */
     width: 100%; /* Pour qu'il prenne toute la largeur de l'écran */
     z-index: 999; /* Pour le placer au-dessus des autres éléments */
 }
@@ -49,8 +49,9 @@ header {
 }
 
 .imgheader {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
     margin-left: 20px;
     transition: 0.3s;
 }
@@ -64,30 +65,29 @@ header {
     display: none;    
 }
 
+header form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+}
+
+#searchIcon {
+    margin: 0 0 0 10px;
+}
+
 .search_input {
     display: none;
     width: 0;
-    height: 15px;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #fff;
     color: #fff;
     outline: none;
-
-}
-
-.checkbox:checked ~ .search .search_input {
-    display: inline-block;
-    animation: slideIn 0.5s forwards;/
-}
-
-@keyframes slideIn {
-    from {
-        width: 0;
-    }
-    to {
-        width: 250px;
-    }
+    transition: width 0.5s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .dropdown-container {
@@ -100,6 +100,7 @@ header {
 
 #plainarrow {
     margin-left: 5px;
+    margin-top: 0;
 }
 
 #plainarrow:hover {
