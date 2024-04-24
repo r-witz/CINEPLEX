@@ -1,8 +1,10 @@
 <?php
 
 require_once '../database/user.php';
+require_once 'bcrypt.php';
 
 $userClass = new User();
+$bcrypt = new Bcrypt();
 
 if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password'])) {
     $pseudo = $_POST['pseudo'];
@@ -15,7 +17,9 @@ if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['passwo
         exit;
     }
 
-    if($userClass->createUser($pseudo, $email, $password)) {
+    $hashedPassword = $bcrypt->hash($password);
+
+    if($userClass->createUser($pseudo, $email, $hashedPassword)) {
         $_SESSION['success'] = 'Successful registration. You can now log in.';
         header('Location: ../index.php');
         exit;

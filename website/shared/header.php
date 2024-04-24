@@ -25,7 +25,13 @@
                 <img id="searchIcon" src="../img/icons/loupe.webp" class="imgheader" alt="">
             </div>
             <a href="#"><img src="../img/icons/library.webp" class="imgheader" alt=""></a>
-            <a href="shared/register.php"><img src="../img/icons/utilisateur.webp" class="imgheader" alt=""></a>
+
+            <?php if (isset($_SESSION['account'])): ?>
+                <a href="actions/disconnecting.php"><img src="../img/icons/logout.webp" class="imgheader" alt=""></a>
+            <?php else: ?>
+                <a href="shared/register.php"><img src="../img/icons/utilisateur.webp" class="imgheader" alt=""></a>
+            <?php endif ?>
+
             <a href="#"><img src="../img/icons/chariot-intelligent.webp" class="imgheader" alt=""></a>
         </div>
     </div>
