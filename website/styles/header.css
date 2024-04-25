@@ -4,9 +4,9 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 5vh; /* Pour le maintenir en haut de la page */
-    width: 100%; /* Pour qu'il prenne toute la largeur de l'écran */
-    z-index: 999; /* Pour le placer au-dessus des autres éléments */
+    top: 5vh;
+    width: 100%;
+    z-index: 999;
 }
 
 

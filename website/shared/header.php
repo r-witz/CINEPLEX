@@ -30,7 +30,7 @@
                     <img id="searchIcon" src="/img/icons/loupe.webp" class="imgheader" alt="">
                 </form>
             </div>
-            <a href="#"><img src="/img/icons/library.webp" class="imgheader" alt=""></a>
+            <a href="../library.php"><img src="/img/icons/library.webp" class="imgheader" alt=""></a>
 
             <?php if (isset($_SESSION['account'])): ?>
                 <a href="actions/disconnecting.php"><img src="/img/icons/logout.webp" class="imgheader" alt=""></a>
