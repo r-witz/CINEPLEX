@@ -133,10 +133,10 @@
                                 OjU2KzAwOjAw0ssWdwAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wMi0xM1QwODoxOTo1Nisw
                                 MDowMIXeN6gAAAAASUVORK5CYII="></image>
                                 </svg>
-                                <p class="number">9759 2484 5269 6576</p>
+                                <p class="number"></p>
                                 <p class="valid_thru">VALID THRU</p>
-                                <p class="date_8264">1 2 / 2 4</p>
-                                <p class="name">BRUCE WAYNE</p>
+                                <p class="date_8264"></p>
+                                <p class="name"></p>
                             </div>
                             <div class="flip-card-back">
                                 <div class="strip"></div>
@@ -151,7 +151,7 @@
                 <div class="card-form">
                     <form action="/submit_registration" method="post">
                         <label for="card-number">Card Number</label>
-                        <input type="text" id="card-number" name="card-number" required placeholder="Enter the card number">
+                        <input type="text" id="card-number" name="card-number" required maxlength="19" placeholder="Enter the card number">
 
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Enter the name">
@@ -163,8 +163,8 @@
                             </div>
 
                             <div id="cvc">
-                                <label for="cvv">CVC</label>
-                                <input type="text" id="cvv" name="cvv" required placeholder="Enter the CVC">
+                                <label for="cvc">CVC</label>
+                                <input type="text" id="cvc" name="cvc" required maxlength="3" placeholder="Enter the CVC">
                             </div>
                         </div>
 
@@ -177,4 +177,8 @@
             </div>
         </div>
     </div>
-</div>
+
+    <script src="script/cart.js"></script>
+</body>
+
+</html>
