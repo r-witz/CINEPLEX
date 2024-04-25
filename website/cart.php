@@ -13,7 +13,7 @@
             echo "<div id=result-container>";
             echo "<div>";
             echo "<h1>You are not Connected</h1>";
-            echo "<p>Please Login or Register to add items to your cart.</p>";
+            echo "<p>Please&nbsp;<strong class='link' id='login-link'>Login</strong>&nbsp;or&nbsp;<strong class='link' id='register-link'>Register</strong>&nbsp;to add items to your cart.</p>";
             echo "</div>";
             echo "</div>";
         } else {
@@ -157,7 +157,8 @@
             }
         }
     ?>
-    <script src="script/cart.js"></script>
+    <script src="/script/cart.js"></script>
+    <script src="/script/link.js"></script>
 </body>
 <?php include_once 'shared/footer.php'; ?>
 </html>

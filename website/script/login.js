@@ -22,10 +22,6 @@ cross_register.addEventListener('click', () => {
     register.style.display = 'none';
 });
 
-cross_message.addEventListener('click', () => {
-    message.style.display = 'none';
-});
-
 login_text.addEventListener('click', () => {
     login.style.display = 'flex';
     register.style.display = 'none';
@@ -35,3 +31,9 @@ register_text.addEventListener('click', () => {
     login.style.display = 'none';
     register.style.display = 'flex';
 });
+
+if (cross_message != null) {
+    cross_message.addEventListener('click', () => {
+        message.style.display = 'none';
+    });
+}

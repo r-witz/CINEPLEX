@@ -41,6 +41,17 @@ body {
     text-align: center;
     font-weight: 500;
     margin: 0;
+    display: flex;
+}
+
+#result-container .link {
+    text-decoration: underline;
+    color: #00C2FF;
+    cursor: pointer;
+}
+
+#result-container strong {
+    font-weight: normal;
 }
 
 .cart {

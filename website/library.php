@@ -13,7 +13,7 @@
             echo "<div id=result-container>";
             echo "<div>";
             echo "<h1>You are not Connected</h1>";
-            echo "<p>Please Login or Register to view your library.</p>";
+            echo "<p>Please&nbsp;<strong class='link' id='login-link'>Login</strong>&nbsp;or&nbsp;<strong class='link' id='register-link'>Register</strong>&nbsp;to view your library.</p>";
             echo "</div>";
             echo "</div>";
         } else {
@@ -120,6 +120,7 @@
     ?>
     <script src="/script/search.js"></script>
     <script src="/script/library.js"></script>
+    <script src="/script/link.js"></script>
 </body>
 <?php include_once 'shared/footer.php'; ?>
 </html>
