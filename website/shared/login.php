@@ -1,5 +1,5 @@
 <div class="login-container" id="login">
-    <img src="/img/icons/cross.webp" class="cross">
+    <img src="/img/icons/cross.webp" id="cross-login">
     <div class="header">
         <h1>Login</h1>
         <h2>To CINEPLEX</h2>

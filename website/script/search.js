@@ -36,7 +36,5 @@ const moveCarousel = () => {
     const imageWidth = images[0].offsetWidth;
     const scrollPosition = ((selectedImagePosition + 1) * (imageWidth + 48)) - (containerWidth / 2);
 
-    console.log(selectedImagePosition, containerWidth, imageWidth, scrollPosition);
-
     filmContainer.scrollLeft = scrollPosition;
 };

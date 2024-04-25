@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="/styles/header.css">
 <link rel="stylesheet" href="/styles/log_reg.css">
+<link rel="stylesheet" href="/styles/message.css">
 
 <?php include_once 'shared/login.php' ?>
 <?php include_once 'shared/register.php' ?>
+<?php include_once 'shared/message.php' ?>
 
 <header>
     <div class="navbar">

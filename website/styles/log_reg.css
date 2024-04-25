@@ -98,7 +98,7 @@
     border-radius: 10px;
 }
 
-input[type="submit"] {
+.login-container input[type="submit"] {
     align-self: center;
     padding: 12px 30px;
     background-color: #222222;
