@@ -40,7 +40,7 @@
                 <img src="/img/icons/utilisateur.webp" class="imgheader" id="login-button" alt="">
             <?php endif ?>
 
-            <a href="#"><img src="/img/icons/chariot-intelligent.webp" class="imgheader" alt=""></a>
+            <a href="../cart.php"><img src="/img/icons/chariot-intelligent.webp" class="imgheader" alt=""></a>
         </div>
     </div>
     <script src="/script/header.js"></script>
