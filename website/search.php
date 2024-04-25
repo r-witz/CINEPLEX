@@ -33,6 +33,7 @@
             echo "</div>";
             echo "</div>";
         } else {
+            $ids = [];
             $titles = [];
             $plots = [];
             $images = [];
@@ -41,6 +42,7 @@
             $prices = [];
 
             foreach ($result as $film) {
+                array_push($ids, $film['id']);
                 array_push($titles, $film['title']);
                 array_push($plots, $film['plot']);
                 array_push($images, $film['image_name']);
@@ -78,9 +80,10 @@
                 echo "<div class='content'>";
                 echo "<h1>" . $titles[$i] . "</h1>";
                 echo "<p>" . $categories[$i] . "</p>";
-                echo "<div class='button'>";
-                echo "<button class='buy-button' data-tooltip='$" . $prices[$i] . "'>ADD TO CART</button>";
-                echo "</div>";
+                echo "<form action='/actions/add-to-cart.php' method='post' class='button'>";
+                echo "<input type='hidden' name='film_id' value='" . $ids[$i] . "'>";
+                echo "<input type='submit' value='ADD TO CART' class='buy-button' data-tooltip='$" . $prices[$i] . "'>";
+                echo "</form>";
                 echo "<div class='cast'>";
                 foreach ($peoples[$i] as $person) {
                     echo "<div class='actor-container' data-tooltip='". $person['name'] ."'>";
