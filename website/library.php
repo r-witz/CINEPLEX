@@ -104,6 +104,9 @@
                     echo "<p>" . $plots[$i] . "</p>";
                     echo "</div>";
                     echo "</div>";
+                    echo "<div class='return'>";
+                    echo "<button class='return-button'>RETURN</button>";
+                    echo "</div>";
                 }
                 echo "</div>";
                 
@@ -116,6 +119,7 @@
         }
     ?>
     <script src="/script/search.js"></script>
+    <script src="/script/library.js"></script>
 </body>
 <?php include_once 'shared/footer.php'; ?>
 </html>
