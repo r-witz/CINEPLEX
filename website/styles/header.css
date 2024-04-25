@@ -4,7 +4,7 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 35px; /* Pour le maintenir en haut de la page */
+    top: 5vh; /* Pour le maintenir en haut de la page */
     width: 100%; /* Pour qu'il prenne toute la largeur de l'écran */
     z-index: 999; /* Pour le placer au-dessus des autres éléments */
 }
@@ -13,18 +13,13 @@ header {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #000000;
     color: #fff;
     width: 80%;
     height: 50px;
     border-radius: 50px;
     box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.50);
-}
-
-.left {
-    display: flex;
-    align-items: center;
 }
 
 #plainarrow {
@@ -41,17 +36,26 @@ header {
     cursor: pointer;
 }
 
+.left,
 .right {
+    position: relative;
     display: flex;
     align-items: center;
-    margin-left: auto;
-    margin-right: 15px;
+    margin: 0 20px;
+}
+
+.right {
+    gap: 15px;
+}
+
+.left > a,
+.right > a {
+    display: grid;
+    place-items: center;
 }
 
 .imgheader {
-    width: 15px;
-    height: 15px;
-    margin-left: 20px;
+    height: 1.5rem;
     transition: 0.3s;
 }
 
@@ -64,30 +68,29 @@ header {
     display: none;    
 }
 
+header form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+}
+
+#searchIcon {
+    margin: 0 0 0 10px;
+}
+
 .search_input {
     display: none;
     width: 0;
-    height: 15px;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #fff;
     color: #fff;
     outline: none;
-
-}
-
-.checkbox:checked ~ .search .search_input {
-    display: inline-block;
-    animation: slideIn 0.5s forwards;/
-}
-
-@keyframes slideIn {
-    from {
-        width: 0;
-    }
-    to {
-        width: 250px;
-    }
+    transition: width 0.5s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .dropdown-container {
@@ -100,6 +103,7 @@ header {
 
 #plainarrow {
     margin-left: 5px;
+    margin-top: 0;
 }
 
 #plainarrow:hover {

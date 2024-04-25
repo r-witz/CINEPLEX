@@ -1,35 +1,22 @@
 <?php
+$pseudo = $_POST['pseudo'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-require_once '../database/user.php';
-require_once 'bcrypt.php';
+$ch = curl_init('http://php-api/register');
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(["pseudo" => $pseudo, "email" => $email, "password" => $password]));
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
 
-$userClass = new User();
-$bcrypt = new Bcrypt();
+$response = json_decode($response, true);
 
-if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-    $pseudo = $_POST['pseudo'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['error'] = 'Invalid email address.';
-        header('Location: ../pages/register.php');
-        exit;
-    }
-
-    $hashedPassword = $bcrypt->hash($password);
-
-    if($userClass->createUser($pseudo, $email, $hashedPassword)) {
-        $_SESSION['success'] = 'Successful registration. You can now log in.';
-        header('Location: ../index.php');
-        exit;
-    } else {
-        $_SESSION['error'] = 'Registration error.';
-        header('Location: ../pages/register.php');
-        exit;
-    }
+if ($response['message'] === 'User registered successfully') {
+    $_SESSION['account'] = $email;
 } else {
-    $_SESSION['error'] = 'Missing field';
-    header('Location: ../pages/register.php');
-    exit;
+    $_SESSION['error_register'] = $response['message'];
 }
+
+header('Location: ' . $_SERVER['HTTP_REFERER']);
