@@ -75,6 +75,10 @@ class ApiRouter {
                         $cart = new CartController();
                         $cart->removeFromCart();
                         break;
+                    case 'GET':
+                        $cart = new CartController();
+                        $cart->getCart();
+                        break;
                     default:
                         http_response_code(405);
                         echo json_encode(["message" => "Method not allowed"]);

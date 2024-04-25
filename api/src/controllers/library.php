@@ -87,7 +87,7 @@ class LibraryController {
 
             $userId = $user['id'];
 
-            $query = "SELECT film_id FROM Carts WHERE user_id = :user_id";
+            $query = "SELECT film_id FROM Carts WHERE user_id = :user_id AND film_id NOT IN (SELECT film_id FROM Library WHERE user_id = :user_id)";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':user_id', $userId);
             $stmt->execute();

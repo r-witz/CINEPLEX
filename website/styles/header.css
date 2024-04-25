@@ -36,8 +36,8 @@ header {
     cursor: pointer;
 }
 
-.left,
-.right {
+header .left,
+header .right {
     position: relative;
     display: flex;
     align-items: center;

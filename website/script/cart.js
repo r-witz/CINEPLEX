@@ -1,41 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-    function updateCreditCard() {
-        var cardNumber = document.getElementById('card-number').value;
-        var name = document.getElementById('name').value;
-        var expirationDate = document.getElementById('experiation-date').value;
-        var cardNumberValue = cardNumberInput.value.replace(/\s+/g, '');
-        var formattedCardNumber = formatCardNumber(cardNumberValue);
-        cardNumberInput.value = formattedCardNumber;
+const cardNumber = document.querySelector("#card-number");
+const cardName = document.querySelector("#name");
+const expirationDate = document.querySelector("#expiration-date");
+const cvc = document.querySelector("#cvc-nb");
 
-        var cardNumberElements = document.querySelectorAll('.number');
-        cardNumberElements.forEach(function(element) {
-            element.textContent = cardNumber;
-        });
+const number = document.querySelector(".number");
+const nameElement = document.querySelector(".name");
+const date = document.querySelector(".date_8264");
+const code = document.querySelector(".code");
 
-        var nameElements = document.querySelectorAll('.name');
-        nameElements.forEach(function(element) {
-            element.textContent = name;
-        });
+cardNumber.addEventListener("input", () => {
+    var cardNumberFormat = cardNumber.value.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ').trim();
+    cardNumber.value = cardNumberFormat;
+    number.textContent = cardNumberFormat;
+});
 
-        var expirationDateElements = document.querySelectorAll('.date_8264');
-        expirationDateElements.forEach(function(element) {
-            element.textContent = expirationDate;
-        });
+cardName.addEventListener("input", () => {
+    nameElement.textContent = cardName.value;
+});
 
-    }
+expirationDate.addEventListener("input", () => {
+    var expirationDateFormat = expirationDate.value.replace(/\s/g, '').replace(/(\d{2})(\d{2})/, '$1/$2').trim();
+    expirationDate.value = expirationDateFormat;
+    date.textContent = expirationDateFormat;
+});
 
-    var formInputs = document.querySelectorAll('input');
-    formInputs.forEach(function(input) {
-        input.addEventListener('input', updateCreditCard);
-    });
-
-    function formatCardNumber(cardNumber) {
-        var formattedNumber = cardNumber.replace(/(\d{4})/g, '$1 ');
-        return formattedNumber.trim();
-    }
-
-    var cardNumberInput = document.getElementById('card-number');
-    cardNumberInput.addEventListener('input', updateCreditCard);
-
-    updateCreditCard();
+cvc.addEventListener("input", () => {
+    console.log(cvc.value);
+    var cvcFormat = cvc.value.replace(/\d/g, '*');
+    code.textContent = cvcFormat;
 });
