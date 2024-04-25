@@ -58,7 +58,7 @@ class LoginController {
             }            
         } catch (PDOException $exception) {
             http_response_code(500);
-            echo json_encode(["message" => "Error while registering user: " . $exception->getMessage()]);
+            echo json_encode(["message" => "Error while loging in user: " . $exception->getMessage()]);
         }
     }
 }

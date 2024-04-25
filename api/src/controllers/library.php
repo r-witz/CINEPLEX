@@ -116,7 +116,7 @@ class LibraryController {
             echo json_encode(["message" => "Cart added to library"]);
         } catch (PDOException $exception) {
             http_response_code(500);
-            echo json_encode(["message" => "Error while looking for films: " . $exception->getMessage()]);
+            echo json_encode(["message" => "Error while adding cart to library: " . $exception->getMessage()]);
         }
     }
 }

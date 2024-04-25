@@ -66,7 +66,7 @@ class CartController {
             
         } catch (PDOException $exception) {
             http_response_code(500);
-            echo json_encode(["message" => "Error while registering user: " . $exception->getMessage()]);
+            echo json_encode(["message" => "Error adding film to cart: " . $exception->getMessage()]);
         }
     }
 
@@ -125,7 +125,7 @@ class CartController {
             echo json_encode(["message" => "Film removed from cart successfully"]);
         } catch (PDOException $exception) {
             http_response_code(500);
-            echo json_encode(["message" => "Error while registering user: " . $exception->getMessage()]);
+            echo json_encode(["message" => "Error while removing film from cart: " . $exception->getMessage()]);
         }
     }
 
@@ -183,7 +183,7 @@ class CartController {
             }
         } catch (PDOException $exception) {
             http_response_code(500);
-            echo json_encode(["message" => "Error while registering user: " . $exception->getMessage()]);
+            echo json_encode(["message" => "Error while getting the cart: " . $exception->getMessage()]);
         }
     }
 }
