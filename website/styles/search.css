@@ -179,7 +179,7 @@ body {
     transition: 0.5s;
 }
 
-.buy-button::before {
+.content .button::before {
     position: absolute;
     content: attr(data-tooltip);
     width: 90px;
@@ -189,11 +189,12 @@ body {
     color: #fff;
     border-radius: 0.25rem;
     line-height: 35px;
+    text-align: center;
     bottom: calc(60px + 28px + 10px);
     left: calc(50% - 90px / 2);
 }
 
-.buy-button::after {
+.content .button::after {
     position: absolute;
     content: "";
     width: 0;
@@ -210,15 +211,15 @@ body {
     transition: 0.5s;
 }
 
-.buy-button::after,
-.buy-button::before {
+.content .button::after,
+.content .button::before {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
 }
 
-.buy-button:hover:before,
-.buy-button:hover:after {
+.content .button:hover:before,
+.content .button:hover:after {
   opacity: 1;
   visibility: visible;
 }

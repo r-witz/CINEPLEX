@@ -81,9 +81,9 @@
                 echo "<div class='content'>";
                 echo "<h1>" . $titles[$i] . "</h1>";
                 echo "<p>" . $categories[$i] . "</p>";
-                echo "<form action='/actions/add-to-cart.php' method='post' class='button'>";
+                echo "<form action='/actions/add-to-cart.php' method='post' class='button' data-tooltip='$" . $prices[$i] . "'>";
                 echo "<input type='hidden' name='film_id' value='" . $ids[$i] . "'>";
-                echo "<input type='submit' value='ADD TO CART' class='buy-button' data-tooltip='$" . $prices[$i] . "'>";
+                echo "<input type='submit' value='ADD TO CART' class='buy-button'>";
                 echo "</form>";
                 echo "<div class='cast'>";
                 foreach ($peoples[$i] as $person) {
