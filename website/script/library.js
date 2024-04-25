@@ -1,18 +1,19 @@
+const header = document.querySelector('header');
+const content = document.querySelector('.content');
+const film_carousel = document.getElementById('film-carousel');
+const footer = document.querySelector('footer');
+const returnButton = document.querySelector('.return-button');
+
 function hideOtherElements() {
-    document.getElementById('film-carousel').style.display = 'none';
+    header.style.display = 'none';
+    film_carousel.style.display = 'none';
+    footer.style.display = 'none';
+}
 
-    document.querySelector('header').style.display = 'none';
-
-    document.querySelector('footer').style.display = 'none';
-
-    document.querySelector('.content').style.display = 'none';
-
-    const filmContainer = video.closest('.film-container');
-    filmContainer.style.display = 'none';
-    document.body.appendChild(video);
-
-    const returnButton = filmContainer.querySelector('button');
-    returnButton.style.display = 'block';
+function showOtherElements() {
+    header.style.display = 'flex';
+    film_carousel.style.display = 'flex';
+    footer.style.display = 'flex';
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -29,11 +30,13 @@ document.addEventListener("DOMContentLoaded", function() {
             const source = document.createElement('source');
             source.setAttribute('src', newUrl);
             source.setAttribute('type', 'video/mp4');
+
+            returnButton.style.display = 'block';
             
             video.classList.add('main-video');
             
             video.appendChild(source);
-            filmContainer.replaceChild(video, image);
+            filmContainer.appendChild(video);
             
             video.controls = true;
             video.autoplay = true;
@@ -45,20 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-const returnButtons = document.querySelectorAll('.return-button');
-    returnButtons.forEach(returnButton => {
-        returnButton.addEventListener('click', function() {
-            const video = document.querySelector('.main-video');
-            const filmContainer = video.parentNode;
-            filmContainer.style.display = 'block';
-            filmContainer.replaceChild(document.createElement('img'), video);
-            returnButton.style.display = 'none';
+    returnButton.addEventListener('click', function() {
+        const video = document.querySelector('.main-video');
+        video.remove();
+        returnButton.style.display = 'none';
 
-            // Afficher à nouveau les éléments masqués
-            document.querySelector('header').style.display = 'block';
-            document.querySelector('footer').style.display = 'block';
-            document.getElementById('film-carousel').style.display = 'block';
-            document.getElementsByClassName('content')[0].style.display = 'block';
-        });
+        showOtherElements();
     });
 });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CINEPLEX</title>
     <link rel="stylesheet" href="styles/search.css">
+    <link rel="icon" type="image/x-icon" href="/img/icons/popcorn-icon.png">
 </head>
 <?php include_once 'shared/header.php'; ?>
 <body>

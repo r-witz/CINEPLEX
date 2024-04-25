@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CINEPLEX</title>
     <link rel="stylesheet" href="styles/search.css">
+    <link rel="icon" type="image/x-icon" href="/img/icons/popcorn-icon.png">
 </head>
 <body>
     <?php include_once 'shared/header.php'; ?>
@@ -104,9 +105,6 @@
                     echo "<p>" . $plots[$i] . "</p>";
                     echo "</div>";
                     echo "</div>";
-                    echo "<div class='return'>";
-                    echo "<button class='return-button'>RETURN</button>";
-                    echo "</div>";
                 }
                 echo "</div>";
                 
@@ -115,12 +113,15 @@
                     echo "<img src='/img/films/vertical/" . $images[$i] . ".webp'>";   
                 }
                 echo "</div>";
+                echo "<button class='return-button'>";
+                echo "<img src='/img/icons/cross.webp' alt='Return'>";
+                echo "</button>";
             }
         }
     ?>
+    <?php include_once 'shared/footer.php'; ?>
     <script src="/script/search.js"></script>
     <script src="/script/library.js"></script>
     <script src="/script/link.js"></script>
 </body>
-<?php include_once 'shared/footer.php'; ?>
 </html>
