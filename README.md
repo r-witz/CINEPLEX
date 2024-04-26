@@ -1,5 +1,7 @@
 # CINEPLEX
 
+!['CINEPLEX Homepage Preview'](./website/img/preview.png)
+
 CINEPLEX is a user-friendly platform that allows users to discover a world of movies effortlessly. Users can explore trailers, synopses, and more, browse by title or director, and dive into curated genres like action and drama. The platform provides detailed information about each film and offers a seamless shopping experience.
 
 ## Getting Started
