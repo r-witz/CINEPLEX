@@ -49,11 +49,11 @@ These instructions will give you the basic knowledge about the project organisat
 
 ### File organisations
 
-The project is divided into two main parts: the [``website``]("./website/") and the [``api``]("./api/").
+The project is divided into two main parts: the ``website`` and the ``api``.
 
 - ### Website
 
-    The [``website``]("./website/") directory contains the front-end code of the project. It includes PHP files for different pages, actions, and shared components. It also includes the `styles` directory for CSS files and the `img` directory for images.
+    The ``website`` directory contains the front-end code of the project. It includes PHP files for different pages, actions, and shared components. It also includes the `styles` directory for CSS files and the `img` directory for images.
 
     - The `actions` directory contains all the files handling some actions and making calls to the api (eg. adding films to cart, buying films, loging in, disconnecting, searching, ...)
     - The `config` directory contains some Docker and Apache configurations files.
@@ -66,7 +66,7 @@ The project is divided into two main parts: the [``website``]("./website/") and 
 
 - ### API
 
-    The [``api``]("./api/") directory contains the back-end code of the project. It includes the `src` directory with PHP files for the API endpoints, controllers, and utilities. It also includes the `config` directory for Docker and Apache configuration files.
+    The ``api`` directory contains the back-end code of the project. It includes the `src` directory with PHP files for the API endpoints, controllers, and utilities. It also includes the `config` directory for Docker and Apache configuration files.
 
     - The `config` directory contains some Docker and Apache configurations files.
     - The `src` directory contains all the folders and files related to the code of the API.
