@@ -59,7 +59,9 @@
                     <div class="selection-circle"></div>
             </div>
             <div class="buy-button-container">
+                <a id="buy-button-redirect" href="search.php?search=forrest">
                 <button class="buy-button">Buy Now</button>
+                </a>
             </div>
         </div>
         <img src="img/3d/cinema-seats.webp" alt="Cinema Seats Rows" id=seat-rows>

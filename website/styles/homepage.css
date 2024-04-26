@@ -446,3 +446,7 @@ img {
     color: #ffffff;
     transition: 0.5s;
 }
+
+a {
+    text-decoration: none;
+}
