@@ -87,9 +87,10 @@
                 echo "</form>";
                 echo "<div class='cast'>";
                 foreach ($peoples[$i] as $person) {
-                    echo "<div class='actor-container' data-tooltip='". $person['name'] ."'>";
+                    $person_name_search = str_replace(' ', '+', $person['name']);
+                    echo "<a href='/search.php?search=" . $person_name_search ."' class='actor-container' data-tooltip='". $person['name'] ."'>";
                     echo "<img src='/img/directors_actor/" . $person['image_name'] . ".webp' alt='' class='actor'>";
-                    echo "</div>";
+                    echo "</a>";
                 }
                 echo "</div>";
                 echo "<p>" . $plots[$i] . "</p>";
