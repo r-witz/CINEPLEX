@@ -8,7 +8,7 @@ CINEPLEX is a user-friendly platform that allows users to discover a world of mo
 1. [CINEPLEX](#cineplex)
 2. [Getting Started](#getting-started)
 3. [Maintaining the Project](#maintaining-the-project)
-4. [API](#api)
+4. [API](#api-1)
 5. [License](#license)
 
 ## Getting Started
