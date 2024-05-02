@@ -4,6 +4,13 @@
 
 CINEPLEX is a user-friendly platform that allows users to discover a world of movies effortlessly. Users can explore trailers, synopses, and more, browse by title or director, and dive into curated genres like action and drama. The platform provides detailed information about each film and offers a seamless shopping experience.
 
+# Table of Contents
+1. [CINEPLEX](#cineplex)
+2. [Getting Started](#getting-started)
+3. [Maintaining the Project](#maintaining-the-project)
+4. [API](#api)
+5. [License](#license)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -111,6 +118,62 @@ The database schema is defined in the `init_db.sql` file. It includes tables for
 ![database scheme](./sql/database.png)
 
 > This database Scheme is representing how the database is made
+
+## API
+
+The API of CINEPLEX is designed to handle various requests related to user authentication, film management, shopping cart functionality, and more. Below are the available endpoints and their corresponding functionalities:
+
+- **GET /**: 
+  - Retrieves a simple greeting message, indicating that the API is running.
+
+- **POST /login**:
+  - Handles user authentication by allowing users to log in with their credentials.
+  - Takes informations in the body (email, password)
+  - Return a message indicating if the login is successfull or has failed
+
+- **POST /register**:
+  - Registers a new user by creating an account with the provided information.
+  - Takes informations in the body (pseudo, email, password)
+  - Return a message indicating if the register is successfull or has failed
+
+- **GET /library**:
+  - Retrieves the films available in the user's library.
+  - Takes informations in the body (user_email)
+  - Return a list of film in library (each film has these elements : id, title, plot, image_name, director_name, actor_names, categories, price)
+
+- **POST /library**:
+  - Adds selected films to the user's library.
+  - Takes informations in the body (user_email)
+  - Return a message indicating if adding the film to the library is successfull or has failed
+
+- **POST /cart**:
+  - Adds films to the user's shopping cart.
+  - Takes informations in the body (user_email, film_id)
+  - Return a message indicating if adding the film to the cart is successfull or has failed 
+
+- **DELETE /cart**:
+  - Removes films from the user's shopping cart.
+  - Takes informations in the body (user_email, film_id)
+  - Return a message indicating if removing the film to the cart is successfull or has failed
+
+- **GET /cart**:
+  - Retrieves the contents of the user's shopping cart.
+  - Takes informations in the body (user_email)
+  - Return a list of film in cart (each film has these elements : id, title, plot, image_name, director_name, actor_names, categories, price)
+
+- **GET /film**:
+  - Retrieves information about specific films, allowing users to browse and view details.
+  - Takes informations as querry params (search)
+  - Return a list of film matching the search (each film has these elements : id, title, plot, image_name, director_name, actor_names, categories, price)
+
+- **GET /people**:
+  - Retrieves information about actors, directors, or any other relevant individuals involved in filmmaking.
+  - Takes informations as querry params (search)
+  - Return a list of film matching people (people has these elements : name, image_name)
+
+Please note that the API responses are in JSON format, and appropriate HTTP status codes are returned to indicate the success or failure of each request.
+
+For detailed usage examples and request payloads, refer to the API documentation or explore the source code of the API controllers.
 
 ## License
 
